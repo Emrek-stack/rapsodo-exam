@@ -1,0 +1,15 @@
+<a class="btn btn-success" href="post/create">Create a Post</a>
+
+{{# each posts }}
+<div class="thumbnail">
+    <div class="caption">
+        <h3>{{ this.title }}</h3>
+        <br>
+        <small> {{ this.created}} </small>
+        <br>
+        <p class="description">{{ this.content }}</p>
+        <p class="description"><a href="/user/profile/{{ this.user._id}}">{{ this.user.username }}</a></p>
+    </div>
+
+</div>
+{{/each}}

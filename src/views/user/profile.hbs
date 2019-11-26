@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-sm-2 col-md-2">
+                    <img src="{{user.picture.large}}" alt="" class="img-rounded img-responsive" />
+                    @{{user.username}}
+                </div>
+                <div class="col-sm-6 col-md-8">
+                    <h4>
+                        {{user.firstName}} {{user.lastName}}</h4>
+                    <a class="btn btn-info" onclick="followUser('{{user._id}}');">Follow</a>
+                    <p>
+                        <i class="glyphicon glyphicon-envelope"></i>{{user.email}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        <h5>
+                            Followers</h5>
+
+                        {{# each user.follwers }}
+                        <img src="{{this.picture.thumbnail}}" />
+                        {{/each}}
+
+                    </div>
+                    <div class="col-md-6">
+                        <h5>
+                            Following</h5>
+                        {{# each user.following }}
+                        <img src="{{this.picture.thumbnail}}" />
+                        {{/each}}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
